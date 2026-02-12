@@ -3,7 +3,10 @@ import { Link } from 'react-router-dom';
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-slate-900 mb-8">소개</h1>
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-slate-900 mb-2">소개</h1>
+        <p className="text-slate-600">연봉 실수령액 계산기 서비스 안내</p>
+      </div>
 
       <div className="space-y-6">
         <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm text-sm text-slate-600 leading-relaxed space-y-4">
