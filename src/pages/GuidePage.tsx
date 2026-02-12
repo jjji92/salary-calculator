@@ -9,7 +9,10 @@ export default function GuidePage() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-slate-900 mb-8">연봉 실수령액 계산 방법</h1>
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-slate-900 mb-2">연봉 실수령액 계산 방법</h1>
+        <p className="text-slate-600">2026년 기준 4대보험·소득세 계산 과정 안내</p>
+      </div>
 
       <div className="space-y-8">
         <Section title="1. 연봉에서 실수령액까지">
