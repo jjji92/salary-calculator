@@ -1,11 +1,13 @@
+import { lazy, Suspense } from 'react';
 import { Routes, Route, Link, useLocation } from 'react-router-dom';
-import SalaryCalculatorPage from './pages/SalaryCalculatorPage';
-import SalaryTablePage from './pages/SalaryTablePage';
-import ReverseCalculatorPage from './pages/ReverseCalculatorPage';
-import GuidePage from './pages/GuidePage';
-import PrivacyPage from './pages/PrivacyPage';
-import AboutPage from './pages/AboutPage';
-import TermsPage from './pages/TermsPage';
+
+const SalaryCalculatorPage = lazy(() => import('./pages/SalaryCalculatorPage'));
+const SalaryTablePage = lazy(() => import('./pages/SalaryTablePage'));
+const ReverseCalculatorPage = lazy(() => import('./pages/ReverseCalculatorPage'));
+const GuidePage = lazy(() => import('./pages/GuidePage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
 
 const NAV_ITEMS = [
   { to: '/', label: '계산기' },
@@ -13,6 +15,10 @@ const NAV_ITEMS = [
   { to: '/reverse', label: '역산 계산기' },
   { to: '/guide', label: '가이드' },
 ];
+
+function Loading() {
+  return <div className="text-center py-12 text-slate-400">로딩 중...</div>;
+}
 
 export default function App() {
   const location = useLocation();
@@ -45,15 +51,17 @@ export default function App() {
 
       {/* Main */}
       <main className="flex-1 px-4 py-8">
-        <Routes>
-          <Route path="/" element={<SalaryCalculatorPage />} />
-          <Route path="/table" element={<SalaryTablePage />} />
-          <Route path="/reverse" element={<ReverseCalculatorPage />} />
-          <Route path="/guide" element={<GuidePage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<SalaryCalculatorPage />} />
+            <Route path="/table" element={<SalaryTablePage />} />
+            <Route path="/reverse" element={<ReverseCalculatorPage />} />
+            <Route path="/guide" element={<GuidePage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+          </Routes>
+        </Suspense>
       </main>
 
       {/* Footer */}
