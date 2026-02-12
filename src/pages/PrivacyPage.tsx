@@ -1,7 +1,9 @@
 export default function PrivacyPage() {
   return (
     <div className="max-w-3xl mx-auto">
-      <h1 className="text-3xl font-bold text-slate-900 mb-8">개인정보처리방침</h1>
+      <div className="text-center mb-8">
+        <h1 className="text-3xl font-bold text-slate-900 mb-2">개인정보처리방침</h1>
+      </div>
 
       <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm text-sm text-slate-600 leading-relaxed space-y-6">
         <section>
