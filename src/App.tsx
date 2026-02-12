@@ -5,6 +5,7 @@ import ReverseCalculatorPage from './pages/ReverseCalculatorPage';
 import GuidePage from './pages/GuidePage';
 import PrivacyPage from './pages/PrivacyPage';
 import AboutPage from './pages/AboutPage';
+import TermsPage from './pages/TermsPage';
 
 const NAV_ITEMS = [
   { to: '/', label: '계산기' },
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/guide" element={<GuidePage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/terms" element={<TermsPage />} />
         </Routes>
       </main>
 
@@ -63,6 +65,7 @@ export default function App() {
             <Link to="/reverse" className="hover:text-slate-700">역산 계산기</Link>
             <Link to="/guide" className="hover:text-slate-700">가이드</Link>
             <Link to="/about" className="hover:text-slate-700">소개</Link>
+            <Link to="/terms" className="hover:text-slate-700">이용약관</Link>
             <Link to="/privacy" className="hover:text-slate-700">개인정보처리방침</Link>
           </div>
           <p className="text-slate-400">&copy; 2026 연봉 실수령액 계산기. 본 계산기는 참고용이며, 실제 급여와 차이가 있을 수 있습니다.</p>
