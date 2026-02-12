@@ -68,8 +68,9 @@ export default function SalaryCalculatorPage() {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">부양가족 수 (본인 포함)</label>
+                <label htmlFor="dependents" className="block text-sm font-medium text-slate-700 mb-1">부양가족 수 (본인 포함)</label>
                 <select
+                  id="dependents"
                   value={dependents}
                   onChange={(e) => setDependents(e.target.value)}
                   className="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
@@ -80,8 +81,9 @@ export default function SalaryCalculatorPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">20세 이하 자녀 수</label>
+                <label htmlFor="children" className="block text-sm font-medium text-slate-700 mb-1">20세 이하 자녀 수</label>
                 <select
+                  id="children"
                   value={children}
                   onChange={(e) => setChildren(e.target.value)}
                   className="w-full rounded-md border border-slate-300 px-3 py-2 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"
@@ -95,6 +97,9 @@ export default function SalaryCalculatorPage() {
 
             <div className="flex items-center gap-3 pt-1">
               <button
+                aria-label="퇴직금 포함 토글"
+                role="switch"
+                aria-checked={includeRetirement}
                 onClick={() => setIncludeRetirement(!includeRetirement)}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
                   includeRetirement ? 'bg-blue-600' : 'bg-slate-300'
