@@ -56,13 +56,16 @@ export default function App() {
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200">
-        <div className="max-w-5xl mx-auto px-4 py-6 text-sm text-slate-400">
+        <div className="max-w-5xl mx-auto px-4 py-6 text-sm text-slate-500">
           <div className="flex flex-wrap gap-x-6 gap-y-2 mb-3">
-            <Link to="/about" className="hover:text-slate-600">소개</Link>
-            <Link to="/guide" className="hover:text-slate-600">가이드</Link>
-            <Link to="/privacy" className="hover:text-slate-600">개인정보처리방침</Link>
+            <Link to="/" className="hover:text-slate-700">계산기</Link>
+            <Link to="/table" className="hover:text-slate-700">실수령액 표</Link>
+            <Link to="/reverse" className="hover:text-slate-700">역산 계산기</Link>
+            <Link to="/guide" className="hover:text-slate-700">가이드</Link>
+            <Link to="/about" className="hover:text-slate-700">소개</Link>
+            <Link to="/privacy" className="hover:text-slate-700">개인정보처리방침</Link>
           </div>
-          <p>&copy; 2026 연봉 실수령액 계산기. 본 계산기는 참고용이며, 실제 급여와 차이가 있을 수 있습니다.</p>
+          <p className="text-slate-400">&copy; 2026 연봉 실수령액 계산기. 본 계산기는 참고용이며, 실제 급여와 차이가 있을 수 있습니다.</p>
         </div>
       </footer>
     </div>

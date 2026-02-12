@@ -1,4 +1,12 @@
+import { Link } from 'react-router-dom';
+import { usePageMeta } from '../utils/usePageMeta';
+
 export default function GuidePage() {
+  usePageMeta(
+    '연봉 세금 계산 가이드 - 4대보험·소득세 설명',
+    '연봉에서 실수령액까지 계산 과정을 단계별로 설명합니다. 2026년 4대보험 요율, 소득세 구간, 근로소득공제 등.'
+  );
+
   return (
     <div className="max-w-3xl mx-auto">
       <h1 className="text-3xl font-bold text-slate-900 mb-8">연봉 실수령액 계산 방법</h1>
@@ -85,6 +93,22 @@ export default function GuidePage() {
           </ul>
         </Section>
       </div>
+
+      {/* 관련 도구 링크 */}
+      <section className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <Link to="/" className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:border-blue-300 transition-colors">
+          <h3 className="font-semibold text-slate-800 mb-1">연봉 실수령액 계산기</h3>
+          <p className="text-sm text-slate-500">내 연봉으로 직접 계산해 보기</p>
+        </Link>
+        <Link to="/table" className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:border-blue-300 transition-colors">
+          <h3 className="font-semibold text-slate-800 mb-1">연봉 실수령액 표</h3>
+          <p className="text-sm text-slate-500">1,000만원~1억원 구간별 비교</p>
+        </Link>
+        <Link to="/reverse" className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm hover:border-blue-300 transition-colors">
+          <h3 className="font-semibold text-slate-800 mb-1">역산 계산기</h3>
+          <p className="text-sm text-slate-500">원하는 월급으로 필요 연봉 계산</p>
+        </Link>
+      </section>
     </div>
   );
 }
@@ -93,7 +117,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
       <h2 className="text-lg font-bold text-slate-900 mb-3">{title}</h2>
-      <div className="text-sm text-slate-600 leading-relaxed">{children}</div>
+      <div className="text-sm text-slate-700 leading-relaxed">{children}</div>
     </section>
   );
 }
