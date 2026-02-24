@@ -8,12 +8,18 @@ const GuidePage = lazy(() => import('./pages/GuidePage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
+const FaqPage = lazy(() => import('./pages/FaqPage'));
+const TipsIndexPage = lazy(() => import('./pages/TipsIndexPage'));
+const TipsNegotiationPage = lazy(() => import('./pages/TipsNegotiationPage'));
+const TipsRaisePage = lazy(() => import('./pages/TipsRaisePage'));
 
 const NAV_ITEMS = [
   { to: '/', label: '계산기' },
   { to: '/table', label: '실수령액 표' },
   { to: '/reverse', label: '역산 계산기' },
   { to: '/guide', label: '가이드' },
+  { to: '/faq', label: 'FAQ' },
+  { to: '/tips', label: '연봉 팁' },
 ];
 
 function Loading() {
@@ -60,6 +66,10 @@ export default function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/terms" element={<TermsPage />} />
+            <Route path="/faq" element={<FaqPage />} />
+            <Route path="/tips" element={<TipsIndexPage />} />
+            <Route path="/tips/salary-negotiation" element={<TipsNegotiationPage />} />
+            <Route path="/tips/salary-raise" element={<TipsRaisePage />} />
           </Routes>
         </Suspense>
       </main>
@@ -74,6 +84,8 @@ export default function App() {
             <Link to="/guide" className="hover:text-slate-700">가이드</Link>
             <Link to="/about" className="hover:text-slate-700">소개</Link>
             <Link to="/terms" className="hover:text-slate-700">이용약관</Link>
+            <Link to="/faq" className="hover:text-slate-700">FAQ</Link>
+            <Link to="/tips" className="hover:text-slate-700">연봉 팁</Link>
             <Link to="/privacy" className="hover:text-slate-700">개인정보처리방침</Link>
           </div>
           <p className="text-slate-400">&copy; 2026 연봉 실수령액 계산기. 본 계산기는 참고용이며, 실제 급여와 차이가 있을 수 있습니다.</p>
