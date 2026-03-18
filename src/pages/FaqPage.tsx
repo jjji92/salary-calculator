@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { usePageMeta } from '../utils/usePageMeta';
 
@@ -49,6 +50,30 @@ export default function FaqPage() {
     '연봉 실수령액 자주 묻는 질문(FAQ) - 2026년 기준',
     '연봉 3000만원 실수령액, 퇴직금 포함 연봉 차이, 4대보험 계산 방법, 식대 비과세 등 연봉 계산에 관한 자주 묻는 질문을 정리했습니다.'
   );
+
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": FAQS.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a,
+        },
+      })),
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'faq-schema';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+    return () => {
+      const el = document.getElementById('faq-schema');
+      if (el) el.remove();
+    };
+  }, []);
 
   return (
     <div className="max-w-3xl mx-auto">
