@@ -3,6 +3,18 @@ import { usePageMeta } from '../utils/usePageMeta';
 
 const ARTICLES = [
   {
+    to: '/tips/income-tax',
+    title: '근로소득세 계산법 완전 해설',
+    desc: '2026년 소득세 세율표, 과세표준 계산 방법, 간이세액 원리, 연말정산 흐름, 절세 방법까지 직장인이 알아야 할 소득세를 모두 정리합니다.',
+    tag: '소득세',
+  },
+  {
+    to: '/tips/paycheck-guide',
+    title: '급여명세서 완전 해설',
+    desc: '기본급·식대·각종 수당 등 지급항목과 국민연금·건강보험·소득세 등 공제항목의 의미를 항목별로 상세히 설명합니다.',
+    tag: '급여명세서',
+  },
+  {
     to: '/tips/salary-negotiation',
     title: '연봉 협상 완전 가이드',
     desc: '이직·신입·재직 상황별 연봉 협상 전략과 실전 대화법을 정리했습니다. 협상 타이밍, 희망 연봉 제시 방법, 거절 대응까지.',
@@ -36,8 +48,8 @@ const ARTICLES = [
 
 export default function TipsIndexPage() {
   usePageMeta(
-    '연봉 팁 모음 - 협상·인상 전략 가이드',
-    '연봉 협상, 연봉 인상 요청 전략 등 연봉을 높이는 데 바로 활용할 수 있는 실전 가이드를 모았습니다.'
+    '연봉 팁 모음 - 소득세·급여명세서·협상 가이드',
+    '근로소득세 계산법, 급여명세서 읽는 법, 연봉 협상·인상 전략 등 직장인이 꼭 알아야 할 연봉·급여 지식을 모았습니다.'
   );
 
   return (

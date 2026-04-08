@@ -15,6 +15,8 @@ const TipsRaisePage = lazy(() => import('./pages/TipsRaisePage'));
 const TipsFourInsurancePage = lazy(() => import('./pages/TipsFourInsurancePage'));
 const TipsRetirementPage = lazy(() => import('./pages/TipsRetirementPage'));
 const TipsMinWagePage = lazy(() => import('./pages/TipsMinWagePage'));
+const TipsIncomeTaxPage = lazy(() => import('./pages/TipsIncomeTaxPage'));
+const TipsPaycheckPage = lazy(() => import('./pages/TipsPaycheckPage'));
 
 const NAV_ITEMS = [
   { to: '/', label: '계산기' },
@@ -76,6 +78,8 @@ export default function App() {
             <Route path="/tips/four-insurance" element={<TipsFourInsurancePage />} />
             <Route path="/tips/retirement-pay" element={<TipsRetirementPage />} />
             <Route path="/tips/minimum-wage-2026" element={<TipsMinWagePage />} />
+            <Route path="/tips/income-tax" element={<TipsIncomeTaxPage />} />
+            <Route path="/tips/paycheck-guide" element={<TipsPaycheckPage />} />
           </Routes>
         </Suspense>
       </main>
