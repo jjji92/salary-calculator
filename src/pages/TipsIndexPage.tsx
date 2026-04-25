@@ -59,6 +59,20 @@ export default function TipsIndexPage() {
         <p className="text-slate-600">연봉을 높이는 데 바로 쓸 수 있는 실전 전략 모음입니다.</p>
       </div>
 
+      <div className="mb-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm text-sm text-slate-700 space-y-3 leading-relaxed">
+        <p>
+          연봉 실수령액은 단순히 연봉을 12로 나눈 금액이 아닙니다. 국민연금·건강보험·고용보험 등
+          4대보험과 소득세·지방소득세가 공제된 후의 금액이 실제 통장에 들어오는 돈입니다.
+          연봉 4,000만원이라도 부양가족 수, 비과세 항목, 연말정산 공제에 따라 실수령액이
+          월 10~20만원씩 달라질 수 있습니다.
+        </p>
+        <p>
+          이 섹션에서는 급여명세서를 정확히 읽는 법부터, 소득세 절감 방법, 연봉 협상 전략까지
+          직장인이 실질적으로 더 많이 받는 데 도움이 되는 정보를 정리했습니다.
+          각 아티클은 2026년 최신 기준을 반영합니다.
+        </p>
+      </div>
+
       <div className="space-y-4">
         {ARTICLES.map((a) => (
           <Link
